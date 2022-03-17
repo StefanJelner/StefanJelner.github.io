@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "My personal GitHub page",
   "scripts": {
-    "start": "node ./build.js"
+    "start": "node ./gpflea.js"
   },
   "repository": {
     "type": "git",

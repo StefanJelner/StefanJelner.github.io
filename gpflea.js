@@ -1,3 +1,8 @@
+/**
+ * gpFlea (GitHub Pages Flea)
+ * 
+ * gpFlea is a superdupertiny zero config static site generator for GitHub Pages.
+ */
 const _ = require('lodash');
 const assets = require('./src/assets.json');
 const autoprefixer = require('autoprefixer');
@@ -25,6 +30,7 @@ const md = require('markdown-it')({
 });
 const { minify } = require('html-minifier');
 const open = require('open');
+const package = require('./package.json');
 const path = require('path');
 const ports = {
     livereloadServer: 3001
@@ -34,7 +40,6 @@ const pressAnyKey = require('press-any-key');
 const postcss = require('postcss');
 const sanitizeHtml = require('sanitize-html');
 const sass = require('sass');
-const { result } = require('lodash');
 
 function readFile(filename) {
     return fs.readFileSync(filename, 'utf8').replace(/\r\n/g, '\n');
@@ -108,6 +113,18 @@ function BEMify($body) {
     return $body;
 }
 
+function getLivereloadHTML() {
+    return `<script type="text/javascript">
+        location.hostname==='localhost'&&document.write('<script src="http://localhost:${
+            ports.livereloadServer
+        }/livereload.js?snipver=1"></' + 'script>');
+    </script>`.replace(/\r?\n\s+/g, '');
+}
+
+function addGenerator() {
+    return `<meta name="generator" content="gpFlea (GitHub Pages Flea) ${package.version}" />`;
+}
+
 function writeFile(filename, header, footer, tplVars, content) {
     fs.writeFileSync(
         filename
@@ -119,7 +136,7 @@ function writeFile(filename, header, footer, tplVars, content) {
                 , minifyJS: true
                 , removeComments: true
             }
-        ).replace(/(<\/head>)/i, `${getLivereloadHTML()}$1`)
+        ).replace(/(<\/head>)/i, `${getLivereloadHTML()}${addGenerator()}$1`)
         , 'utf8'
     );
     fancyLog(c.green(`${filename} written.`));
@@ -155,14 +172,6 @@ function findLinks($body, pages, blogEntries) {
     }
 
     return $body;
-}
-
-function getLivereloadHTML() {
-    return `<script type="text/javascript">
-        location.hostname==='localhost'&&document.write('<script src="http://localhost:${
-            ports.livereloadServer
-        }/livereload.js?snipver=1"></' + 'script>');
-    </script>`.replace(/\r?\n\s+/g, '');
 }
 
 function writePages(pagesPartial, urlPrefixes, titles, pages, blogEntries, header, footer) {
