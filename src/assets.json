@@ -1,0 +1,8 @@
+{
+    "./node_modules/risland.js/dist/risland.iife.min.js": "./public/assets/js/risland.iife.min.js"
+    , "./node_modules/dragula/dist/dragula.min.css": "./public/assets/css/dragula.min.css"
+    , "./node_modules/dragula/dist/dragula.min.js": "./public/assets/js/dragula.min.js"
+    , "./node_modules/i18next/dist/umd/i18next.min.js": "./public/assets/js/i18next.min.js"
+    , "./node_modules/@fortawesome/fontawesome-free/js/solid.min.js": "./public/assets/js/solid.min.js"
+    , "./node_modules/@fortawesome/fontawesome-free/js/fontawesome.min.js": "./public/assets/js/fontawesome.min.js"
+}
