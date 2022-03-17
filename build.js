@@ -205,7 +205,7 @@ function writePages(pagesPartial, urlPrefixes, titles, pages, blogEntries, heade
                             : []
                     )
                 };
-                writeFile(`./public/${
+                writeFile(`./docs/${
                     urlPrefixes.concat(
                         urlPrefixes[urlPrefixes.length - 1] !== pagesPartial[page].url
                             ? pagesPartial[page].url
@@ -220,8 +220,8 @@ function writePages(pagesPartial, urlPrefixes, titles, pages, blogEntries, heade
 function build() {
     fancyLog('Build started.');
 
-    fs.emptyDirSync('./public');
-    fancyLog(c.green('Public folder deleted.'));
+    fs.emptyDirSync('./docs');
+    fancyLog(c.green('/docs folder deleted.'));
 
     const pages = {};
     const blogEntries = {};
@@ -266,7 +266,7 @@ function build() {
     const blogEntriesValues = Object.values(blogEntries);
 
     if (Object.keys(pages).length > 0 || blogEntriesValues.length > 0) {
-        fs.copySync('./src/assets', './public/assets');
+        fs.copySync('./src/assets', './docs/assets');
         fancyLog(c.green('Assets folder copied.'));
 
         Object.keys(assets).forEach(source => {
@@ -276,21 +276,21 @@ function build() {
             fancyLog(c.green(`${source} copied.`));
         });
 
-        fs.ensureDirSync('./public/assets/css');
+        fs.ensureDirSync('./docs/assets/css');
 
         const { css } = sass.compile('./src/scss/styles.scss', {
             loadPaths: ['./node_modules', './src/scss']
             , style: 'compressed'
         });
-        fs.writeFileSync('./public/assets/css/styles.css', postcss([autoprefixer]).process(css).css, 'utf8');
-        fancyLog(c.green(`./public/assets/css/styles.css written.`));
+        fs.writeFileSync('./docs/assets/css/styles.css', postcss([autoprefixer]).process(css).css, 'utf8');
+        fancyLog(c.green(`./docs/assets/css/styles.css written.`));
 
         const header = handlebars.compile(readFile('./src/global/header.hbs'));
         const footer = handlebars.compile(readFile('./src/global/footer.hbs'));
 
         const tplVars = { titles: [`Blog (${blogEntriesValues.length} entries)`] };
         writeFile(
-            './public/index.html'
+            './docs/index.html'
             , header
             , footer
             , tplVars
@@ -312,10 +312,10 @@ function build() {
 build();
 
 const app = express();
-app.use('/', express.static('./public'));
+app.use('/', express.static('./docs'));
 app.get('/', (_, res) => { res.sendFile(path.resolve('./index.html')); });
 app.listen(ports.webServer, () => {
-    livereload.createServer({ port: ports.livereloadServer }).watch('./public');
+    livereload.createServer({ port: ports.livereloadServer }).watch('./docs');
 
     chokidar.watch(['./src'].concat(Object.keys(assets))).on('all', (event, path) => {
         if (['change', 'unlink', 'unlinkDir'].indexOf(event) !== -1) {
