@@ -1,0 +1,40 @@
+@use './mixins';
+@use './z-indexes';
+
+// See https://codepen.io/creme/pen/aPJwEz
+body {
+    @include mixins.vhs-body-scanlines;
+}
+
+.vhs {
+    &-scanlines {
+        animation: vhs-opacity 3s linear infinite;
+        height: 100vh;
+        left: 0;
+        opacity: .6;
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        will-change: opacity;
+        z-index: z-indexes.$vhs-scanlines;
+
+        &::before {
+            animation: vhs-scanlines .2s linear infinite;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, .5) 51%);
+            background-size: 100% .4rem;
+            bottom: 0;
+            content: '';
+            left: 0;
+            pointer-events: none;
+            position: absolute;
+            right: 0;
+            top: 0;
+            will-change: background, background-size;
+        }
+    }
+
+    &-text {
+        @include mixins.vhs-text;
+    }
+}

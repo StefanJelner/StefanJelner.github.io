@@ -1,0 +1,22 @@
+@use './mixins';
+
+// http://google-webfonts-helper.herokuapp.com/fonts/roboto?subsets=latin
+
+// Roboto
+@include mixins.font-shorthand('Roboto', normal, 400, 'roboto-v29-latin-regular');
+
+// Roboto italic
+@include mixins.font-shorthand('Roboto', italic, 400, 'roboto-v29-latin-italic');
+
+// Roboto bold 700
+@include mixins.font-shorthand('Roboto', normal, 700, 'roboto-v29-latin-700');
+
+// http://google-webfonts-helper.herokuapp.com/fonts/roboto-mono?subsets=latin
+
+// Roboto Mono
+@include mixins.font-shorthand('Roboto Mono', normal, 400, 'roboto-mono-v13-latin-regular');
+
+// http://google-webfonts-helper.herokuapp.com/fonts/press-start-2p?subsets=latin
+
+// Press Start 2P
+@include mixins.font-shorthand('Press Start 2P', normal, 400, 'press-start-2p-v12-latin-regular');

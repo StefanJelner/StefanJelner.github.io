@@ -1,1 +1,19 @@
-@import './normalize';
+// partials
+@use './partials/fonts';
+@use './partials/animations';
+@use './partials/normalize';
+@use './partials/general';
+@use './partials/vhs-effects';
+
+// atoms
+@use './atoms/headline';
+@use './atoms/link';
+@use './atoms/paragraph';
+@use './atoms/time';
+
+// molecules
+
+// organisms
+@use './organisms/pagination';
+
+// templates
