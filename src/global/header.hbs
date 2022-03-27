@@ -2,7 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Stefan Jelner{{#each titles}} - {{this}}{{/each}}</title>
+    <title>
+        Stefan Jelner
+        {{#if (eq type 'blog')}}
+            {{#if (eq blogType 'list')}}
+                - Blog ({{totalEntries}} entries)
+                - Page {{math currentPage '+' 1}}
+                (entries
+                {{math firstIndex '+' 1}}
+                to
+                {{math lastIndex '+' 1}},
+                {{#with (lookup entries firstIndex)}}{{this.subtitle}}{{/with}}
+                to
+                {{#with (lookup entries lastIndex)}}{{this.subtitle}}{{/with}})
+            {{else}}
+                - {{entry.subtitle}} - {{entry.title}}
+            {{/if}}
+        {{else if (eq type 'hashtag')}}
+            - Hashtag #{{hashtag}} ({{totalEntries}} occurences)
+            - Page {{math currentPage '+' 1}}
+            (occurences
+            {{math firstIndex '+' 1}}
+            to
+            {{math lastIndex '+' 1}},
+            {{#with (lookup occurences firstIndex)}}{{this.subtitle}}{{/with}}
+            to
+            {{#with (lookup occurences lastIndex)}}{{this.subtitle}}{{/with}})
+        {{else if (eq type 'search')}}
+            - Search results
+        {{else}}
+            {{#each titles}} - {{this}}{{/each}}
+        {{/if}}
+    </title>
+    <link rel="stylesheet" href="/assets/css/highlight.js.css" />
     <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
+    <div class="vhs-scanlines"></div>
+    <aside class="aside">
+        <form class="search-form" action="/search.html" method="GET">
+            <input class="search-form__q" type="text" name="q" value="" />
+            <input class="search-form__submit" type="submit" value="Search" />
+        </form>
+        <a class="link link--homepage" href="/">Homepage</a>
+        {{#if (and navigation.pages.nested (gt navigation.pages.nested.length 0))}}
+            <nav class="navigation">
+                {{> navigation pages=navigation.pages.nested level=1}}
+            </nav>
+        {{/if}}
+        {{#if (and navigation.blog (gt navigation.blog.length 0))}}
+            <nav class="latest">
+                <ul class="latest__list">
+                    {{#each navigation.blog}}
+                        {{#if (lt @index 5)}}
+                            <li class="latest__list__item">
+                                <a class="latest__list__item__link" href="{{this.url}}">
+                                    {{this.subtitle}} - {{this.title}}
+                                </a>
+                            </li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </nav>
+        {{/if}}
+        {{#if (and navigation.hashtags (gt navigation.hashtags.length 0))}}
+            <nav class="hashtags">
+                <ul class="hashtags__list">
+                    {{#each navigation.hashtags}}
+                        <li class="hashtags__list__item">
+                            <a class="hashtags__list__item__link" href="{{this.url}}">
+                                #{{this.hashtag}} ({{this.count}})
+                            </a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </nav>
+        {{/if}}
+    </aside>
+    <main class="main main--{{type}}">

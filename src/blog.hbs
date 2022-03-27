@@ -1,0 +1,37 @@
+{{#if (eq blogType 'list')}}
+    {{> pagination type='blog' hashtag=''}}
+
+    <ul class="blog">
+        {{#each entries}}
+            {{#if (and (gte @index ../firstIndex) (lte @index ../lastIndex))}}
+                <li class="blog__item" id="{{this.anchor}}">
+                    {{{this.short}}}
+                    <p class="paragraph"><a class="link link--more" href="{{this.url}}">More</a></p>
+                </li>
+            {{/if}}
+        {{/each}}
+    </ul>
+
+    {{> pagination type='blog' hashtag=''}}
+{{else}}
+    {{{entry.html}}}
+
+    <nav class="prev-next">
+        <ul class="prev-next__list">
+            {{#if previousEntry}}
+                <li class="prev-next__list__item prev-next__list__item--previous">
+                    <a class="prev-next__list__item__link" href="{{previousEntry.url}}">
+                        {{previousEntry.subtitle}} - {{previousEntry.title}}
+                    </a>
+                </li>
+            {{/if}}
+            {{#if nextEntry}}
+                <li class="prev-next__list__item prev-next__list__item--next">
+                    <a class="prev-next__list__item__link" href="{{nextEntry.url}}">
+                        {{nextEntry.subtitle}} - {{nextEntry.title}}
+                    </a>
+                </li>
+            {{/if}}
+        </ul>
+    </nav>
+{{/if}}
