@@ -1,5 +1,15 @@
 # Philosophy
 
+> "To be is to do" - Socrates
+>
+> "To do is to be" - Jean-Paul Sartre
+>
+> "To be or not to be" - William Shakespeare
+>
+> "Do be do be do" - Frank Sinatra
+>
+> -- [quoteinvestigator.com](https://quoteinvestigator.com/2013/09/16/do-be-do/)
+
 As a philosopher i would see myself as a classical stoicist, because my thinking is focussed on the questions "Who am i?", "Why am i here?", "Where is my place in the cosmos?", "What are the right actions?" and "How can i be good?". (The final question usually triggers smartassing people telling me, that "good" and "bad" do not exist or are completely subjective. No, they are not - and i will show why later! Those people usually slept during ethics classes.)
 
 I am an apologet of prudence as the mother of all virtues. Unlike intelligence, stealth, shrewdness, smartness and other terms which describe a bare, unempathetic value of "performance" - fitting very well into our biologistic and economic paradigms of performance -, prudence is so much more, because it leads to all the other virtues, like justice, fortitude and temperance. Even this might sound oldschooled and reactionary, it is not: I am a far-left-eco-feminist-vegan activist. Because it is prudent to be one! I do not need sticky, problematic, biologistic justifications or ethical trickery for my actions.
@@ -53,7 +63,9 @@ Here are some more of my thoughts:
   
   So inspite of using artificial intelligence and robotics to free humanity from the need of work, it is used for advertising and weaponry; all based on the "best economic system we ever had" and the ideas of "normal males". Just try to phantasize a future, in which everyone could do voluntary work and we would have everything we need; one step could be to use the technology we already have in its full potential and an unconditional basic income. It all depends on the "little stories" we tell each other everyday. 5% - 10% of the society are enough to make a change. It is a myth that you need a majority to make changes in society! And forget about "normal males" who call their lack of phantasy or their will to keep on ruling "pragmatism".
 
-  "There's always a story. It's all stories, really. The sun coming up every day is a story. Everything's got a story in it. Change the story, change the world." Terry Pratchett
+  > There's always a story. It's all stories, really. The sun coming up every day is a story. Everything's got a story in it. Change the story, change the world.
+  >
+  > -- Terry Pratchett
 
   You want to change the world, change your country. You want to change your country, change your region. You want to change your region, change your city. You want to change your city, change your street. You want to change your street, change your house. You want to change your house, change your family. You want to change your family, change yourself.
 
