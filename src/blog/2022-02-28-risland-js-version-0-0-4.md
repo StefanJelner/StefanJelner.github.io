@@ -8,3 +8,5 @@ RIsland is now in a state, that it can be used without things not working and th
 Besides the three examples with the sortable and filterable table, the todo list with drag&drop and the funny tetris clone are a first approach to show, what RIsland is capable of with a few lines of code.
 
 [https://www.npmjs.com/package/risland.js](https://www.npmjs.com/package/risland.js)
+
+foo bar baz qux bash

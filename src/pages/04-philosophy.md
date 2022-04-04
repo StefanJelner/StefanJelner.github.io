@@ -12,6 +12,21 @@ Here are some more of my thoughts:
 
 - "Memento mori" (Remember that you have to die): This could be the perfect justification for living a life of rudeness, selfishness and hedonism, and it sounds a little bit like "Carpe diem" or the very popular "Live each day, as if it were your last" - a sentence you can read on every other Tinder profile -, but for me it is meant in a totally different way: It has nothing to do with squeezing the last drop of achievement or fun out of each day; and also not with with hopelessness, but it always gives me the ability to realign the priorities in my life, to focus on the people, things or activities i love and i care for. It can also help to prevent Megalomania, bring back the awareness of vanitas, help to be more modest and show the right place in the cosmos. There is a legend, that the roman emperors had slaves, which - after a victory - repeated this sentence. I can totally understand why!
 
+  > A dog  
+  > that dies  
+  > and knows  
+  > that it dies  
+  > like a dog  
+  >
+  > and who can say  
+  > that it knows  
+  > that it dies  
+  > like a dog  
+  >
+  > is a man.
+  >
+  > -- Erich Fried
+
 - "Ama nesciri" (Love to be unknown) and "We are only dwarfs on the shoulders of giants":
   
   Both aphorisms are about modesty in one way or the other.
